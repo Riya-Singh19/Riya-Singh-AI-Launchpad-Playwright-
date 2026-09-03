@@ -1,0 +1,99 @@
+1. Structured Prompt
+
+Design a Flight Search System.
+
+Business Requirement:
+Users should be able to search for flights by providing travel details and view matching flight options.
+Inputs:
+From City
+To City
+Departure Date
+Number of Passengers
+Travel Class
+System Functions
+Search available flights
+Display search results
+Allow flight selection
+
+Output Required
+Provide:
+Functional Requirements
+Validation Rules
+Assumptions
+Error Messages
+Acceptance Criteria
+
+============================================================================================================================================================
+
+2.Zero-Shot Prompt
+
+Create the Functional Requirements and Validation Rules for a Flight Search System where users can enter From City, To City, Departure Date, Number of Passengers, and Travel Class. The system should display available flights and allow users to select a flight.
+
+============================================================================================================================================================
+3. One-Shot Prompt
+
+Generate automation test cases for a Flight Search system.
+Example:
+
+From City = Chennai
+To City = Bangalore
+Departure Date = Tomorrow
+Passengers = 1
+Travel Class = Economy
+
+Expected Result:
+Available flights are displayed.
+User can select a flight.
+
+4. Few-Shot Prompt
+
+Generate automation test cases for a Flight Search system.
+Example 1:
+
+From City = Chennai
+To City = Bangalore
+Departure Date = Tomorrow
+Passengers = 1
+Travel Class = Economy
+Result = Valid Search
+Example 2
+From City = Chennai
+To City = Chennai
+Departure Date = Tomorrow
+Passengers = 1
+Travel Class = Economy
+
+Result = Invalid Search
+
+============================================================================================================================================================
+5. Chain-of-Thought / Structured Reasoning Prompt
+
+Act as a Senior QA Analyst.
+Analyze the Flight Search functionality systematically.
+Scenario:
+
+A user searches for flights using:
+From City
+To City
+Departure Date
+Number of Passengers
+Travel Class
+
+Analyze:
+Mandatory field validations
+Date validations
+Passenger count validations
+Travel class validations
+Flight availability rules
+Flight selection functionality
+
+Then provide:
+Functional Requirements
+Validation Rules
+Positive Test Cases
+Negative Test Cases
+Boundary Test Cases
+Automation Test Scenarios
+
+
+
