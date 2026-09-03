@@ -1,0 +1,26 @@
+import os
+from dotenv import load_dotenv
+from langchain_huggingface import (
+    ChatHuggingFace,
+    HuggingFaceEndpoint    #importing these two from hugging face
+)
+
+#details added to dot.env file will be available here by using load_dotenv
+load_dotenv()
+
+#loading your variable details 
+hf_token = os.getenv("HF_TOKEN")
+
+if not hf_token:
+    raise ValueError("HF_Token not found. Check your .env file")
+
+lm = HuggingFaceEndpoint (
+    repo_id="Qwen/Qwen3.8-Flash-Next",
+    task="text-generation",
+    huggingfacehub_api_token=hf_token, #token we pasted in .env file
+    max_new_tokens=2000,
+    temperature=0.2,
+)
+chat_model = ChatHuggingFace(  #stored the details of llm in chat_model
+    llm=lm
+)
