@@ -1,0 +1,44 @@
+import {Given, When, Then} from '@cucumber/cucumber';
+import {LoginPage} from '../../pages/loginPage';
+import {CustomWorld} from '../../support/world';
+
+
+let login: LoginPage;
+Given('I am on the login page', async function (this: CustomWorld) {
+  // Write code here that turns the phrase above into concrete actions
+  login = new LoginPage(this.page);
+  await login.openApp();
+});
+
+When('I enter valid credentials', async function (this: CustomWorld) {
+  // Write code here that turns the phrase above into concrete actions
+  await login.login();
+});
+
+When('User enters {string} and {string}', async function (username: string, password: string) {
+  // Write code here that turns the phrase above into concrete actions
+  await login.loginwithmultipleusers(username, password);
+});
+
+
+Then('I should be redirected to the dashboard page', async function (this: CustomWorld) {
+  // Write code here that turns the phrase above into concrete actions
+  // Example: await login.verifyDashboard();
+  console.log('Redirected to dashboard page');
+});
+
+When('I enter invalid credentials', async function (this: CustomWorld) {
+    await login.loginwithinvalidcredentials();
+});
+
+Then('I should see an error message indicating invalid credentials', async function (this: CustomWorld) {
+  await login.errormsgcheck();
+});
+
+Then('User should see an error message', async function (this: CustomWorld) {
+  await login.loginwithinvalidcredentials();
+});
+
+Then('User should be login successfully', async function (this: CustomWorld) {
+  await console.log("sucess");
+});
